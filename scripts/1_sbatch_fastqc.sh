@@ -25,7 +25,7 @@ echo "Fastqc output: " $FASTQC_OUT_DIR
 mkdir -p $FASTQC_OUT_DIR
 
 echo "Running fastqc on files listed in $FASTQ_FILE_LIST"
-while read file; do fastqc $file; done <$FASTQ_FILE_LIST
+while read file; do fastqc $file; done <<<"$FASTQ_FILE_LIST"
 
 echo "Cleaning up logs and output files"
 
