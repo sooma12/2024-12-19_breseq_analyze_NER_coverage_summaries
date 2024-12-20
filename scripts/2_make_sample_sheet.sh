@@ -20,7 +20,7 @@ fi
 # from sample sheet, we can access individual items from each line with e.g. `awk '{print $3}' sample_sheet.txt`
 paste R1.list R2.list | while read R1 R2 ;
 do
-    outdir_root=$(basename "${R2}" | cut -f1 -d"_") ;
+    outdir_root=$(basename "${R2}" | cut -f1,2 -d"_") ;
     sample_line="${outdir_root} ${R1} ${R2}" ;
     echo "${sample_line}" >> $SAMPLE_SHEET
 done
